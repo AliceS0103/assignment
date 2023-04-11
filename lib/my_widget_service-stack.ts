@@ -10,7 +10,7 @@ export class MyWidgetServiceStack extends Stack {
     super(scope, id, props);
     new widget_service.WidgetService(this, 'Widgets');
 
-    const ecsFargateProps = new EcsFargateProps(props.vpc , "cardeo", "EcsService", 80, 'myImageTag');
+    const ecsFargateProps = new EcsFargateProps(vpc , "cardeo", "EcsService", 80, 'myImageTag');
     const ecsService = new EcsService(this, "EcsService", ecsFargateProps);
 
   }
